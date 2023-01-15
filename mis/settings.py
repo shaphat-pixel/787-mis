@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'mis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '787MISDATABASE',
+        'NAME': 'postgres',
         'USER': 'linpostgres',
-        'PASSWORD': '5UwrZ6ig-WiZCOEk',
-        'HOST': 'lin-14749-4598-pgsql-primary.servers.linodedb.net',
+        'PASSWORD': '7AP3L9kQri.BJzLd',
+        'HOST': 'lin-14754-4601-pgsql-primary.servers.linodedb.net',
         'PORT': '5432',
 
     }
