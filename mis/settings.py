@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-a9+(z!x#_hm&e&0@(z%#^@rly-lxppvp*@bmjvf&9ld29(wjkv
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['http://*']
 
 # Application definition
 
@@ -82,8 +82,13 @@ WSGI_APPLICATION = 'mis.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '787MISDATABASE',
+        'USER': 'linpostgres',
+        'PASSWORD': '5UwrZ6ig-WiZCOEk',
+        'HOST': 'lin-14749-4598-pgsql-primary.servers.linodedb.net',
+        'PORT': '5432',
+
     }
 }
 
