@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn phoenix.wsgi --log-file -
+web: gunicorn mis.wsgi --log-file -
