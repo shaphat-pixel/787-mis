@@ -16,3 +16,7 @@ class Actual_Ticket_InformationResource(resources.ModelResource):
 class Winning_TicketsResource(resources.ModelResource):
     class Meta:
         model = Winning_Tickets
+
+class Mobile_Number_Directory(resources.ModelResource):
+    class Meta:
+        model = Mobile_Number_Directory

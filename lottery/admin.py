@@ -27,3 +27,9 @@ class Winning_TicketsAdmin(ImportExportModelAdmin):
     list_display = ("draw_id", "draw_name", "player_name", "mobile_number", "ticket_number", "price_amount", "price_category")
     pass
 
+
+@admin.register(Mobile_Number_Directory)
+class Mobile_Number_Directory(ImportExportModelAdmin):
+    list_display = ("mobile_number", "source")
+    pass
+

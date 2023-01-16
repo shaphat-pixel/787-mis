@@ -50,3 +50,11 @@ class Winning_Tickets(models.Model):
 
     def __str__(self):
         return f'{self.player_name}'
+
+
+class Mobile_Number_Directory(models.Model):
+    mobile_number = models.IntegerField(primary_key=True)
+    source = models.CharField(default="", max_length=200)
+
+    def __str__(self):
+        return f'{self.mobile_number}'
