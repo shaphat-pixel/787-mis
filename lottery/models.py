@@ -1,11 +1,13 @@
 from django.db import models
-
+from django.core.validators import MinLengthValidator
 from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 
 class Active_Player_List(models.Model):
-    player_name = models.CharField(default="", max_length=100)
+    player_id = models.CharField(default="", max_length=100)
+    last_name = models.CharField(default="", max_length=100)
+    other_name = models.CharField(default="", max_length=100)
     mobile_number = models.CharField(default="", max_length=100)
     promo_request = models.BooleanField(default=False)
     date_created = models.CharField(default="", max_length=100)
@@ -17,8 +19,10 @@ class Active_Player_List(models.Model):
 
 
 class Sales_Transactions(models.Model):
+    transaction_date = models.CharField(default="", max_length=100)
+    transaction_id = models.CharField(default="", max_length=100)
+    mobile_number =  models.CharField(default="", max_length=100)
     player_name = models.CharField(default="", max_length=100)
-    mobile_number = models.CharField(default="", max_length=100)
     network = models.CharField(default="", max_length=100)
     number_of_tickets = models.PositiveIntegerField()
     amount = models.IntegerField()
@@ -53,7 +57,7 @@ class Winning_Tickets(models.Model):
 
 
 class Mobile_Number_Directory(models.Model):
-    mobile_number = models.CharField(unique=True, max_length=200)
+    mobile_number = models.CharField(unique=True, validators=[MinLengthValidator(11)], max_length=12)
     source = models.CharField(default="", max_length=200)
 
     def __str__(self):

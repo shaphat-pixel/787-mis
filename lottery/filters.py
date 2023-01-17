@@ -4,7 +4,7 @@ import django_filters
 class ActivePlayerListFilter(django_filters.FilterSet):
     class Meta:
         model = Active_Player_List
-        fields = ['player_name', 'mobile_number', 'promo_request']
+        fields = ['last_name', 'other_name', 'player_id', 'mobile_number', 'promo_request']
 
 
 class SalesTransactionsFilter(django_filters.FilterSet):
@@ -22,3 +22,5 @@ class WinningTicketsFilter(django_filters.FilterSet):
     class Meta:
         model = Winning_Tickets
         fields = ['player_name', 'mobile_number', 'draw_id', 'ticket_number', 'price_amount', 'price_category']
+
+    

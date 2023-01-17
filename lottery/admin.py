@@ -6,13 +6,13 @@ from import_export.admin import ImportExportModelAdmin
 
 @admin.register(Active_Player_List)
 class Active_Player_ListAdmin(ImportExportModelAdmin):
-    list_display = ("player_name", "mobile_number", "promo_request", "date_created")
+    list_display = ("player_id", "last_name", "other_name", "mobile_number", "promo_request", "date_created")
     pass
 
 
 @admin.register(Sales_Transactions)
 class SalesTransactionsAdmin(ImportExportModelAdmin):
-    list_display = ("player_name", "mobile_number", "network", "number_of_tickets", "amount")
+    list_display = ("transaction_date", "transaction_id", "player_name", "mobile_number", "network", "number_of_tickets", "amount")
     pass
 
 
