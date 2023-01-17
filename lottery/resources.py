@@ -18,15 +18,11 @@ class Winning_TicketsResource(resources.ModelResource):
         model = Winning_Tickets
 
 class Mobile_Number_Directory(resources.ModelResource):
+    
     class Meta:
         model = Mobile_Number_Directory
 
-    def skip_row(self, instance, original):
-        #return True if Mobile_Number_Directory.objects.filter(mobile_number=instance.mobile_number).exists() else False
-        if Mobile_Number_Directory.objects.filter(mobile_number=instance.mobile_number).exists():
-            return True
-        else:
-            return False
+
 
 
 
