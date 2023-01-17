@@ -57,7 +57,7 @@ class Winning_Tickets(models.Model):
 
 
 class Mobile_Number_Directory(models.Model):
-    mobile_number = models.CharField(unique=True, validators=[MinLengthValidator(12)], max_length=12)
+    mobile_number = models.CharField(validators=[MinLengthValidator(12)], max_length=12)
     source = models.CharField(default="", max_length=200)
 
     def __str__(self):
