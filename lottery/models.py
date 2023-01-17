@@ -53,8 +53,7 @@ class Winning_Tickets(models.Model):
 
 
 class Mobile_Number_Directory(models.Model):
-    id = models.AutoField()
-    mobile_number = models.IntegerField(primary_key=True)
+    mobile_number = models.IntegerField()
     source = models.CharField(default="", max_length=200)
 
     def __str__(self):
