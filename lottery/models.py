@@ -9,7 +9,7 @@ class Active_Player_List(models.Model):
     last_name = models.CharField(default="", max_length=100)
     other_name = models.CharField(default="", max_length=100)
     mobile_number = models.CharField(default="", max_length=100)
-    promo_request = models.BooleanField(default=False)
+    promo_request = models.CharField(default="", max_length=100)
     date_created = models.CharField(default="", max_length=100)
 
 
