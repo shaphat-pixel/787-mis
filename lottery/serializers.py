@@ -21,3 +21,8 @@ class Winning_TicketsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Winning_Tickets
         fields = '__all__'
+
+class FileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = File
+        fields = '__all__'

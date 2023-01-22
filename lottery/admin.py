@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import *
 from import_export.admin import ImportExportModelAdmin
+from . resources import *
 
 
 @admin.register(Active_Player_List)
@@ -31,5 +32,7 @@ class Winning_TicketsAdmin(ImportExportModelAdmin):
 @admin.register(Mobile_Number_Directory)
 class Mobile_Number_Directory(ImportExportModelAdmin):
     list_display = ("mobile_number", "source")
+    resource_class = Mobile_Number_Directory_Resource
+    skip_admin_log = True
     pass
 

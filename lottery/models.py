@@ -61,5 +61,13 @@ class Mobile_Number_Directory(models.Model):
     mobile_number = models.CharField(primary_key=True, validators=[MinLengthValidator(12)], max_length=12)
     source = models.CharField(default="", max_length=200, null=True, blank=True)
 
+    class Meta:
+        db_table = 'mobile_number_directory'
+        managed = False
+
     def __str__(self):
         return f'{self.mobile_number}'
+
+
+class File(models.Model):
+    file = models.FileField(upload_to="files/")

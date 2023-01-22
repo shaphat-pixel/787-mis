@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django_rest_passwordreset',
 
     'import_export',
+    'pandas',
+    'pangres',
 
     'users',
     'lottery',
@@ -85,8 +87,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'linpostgres',
-        'PASSWORD': 'qW#UbZmVzW9230e9',
-        'HOST': 'lin-14852-4652-pgsql-primary.servers.linodedb.net',
+        'PASSWORD': '^ycZUaSzWOrsK37E',
+        'HOST': 'lin-15054-4726-pgsql-primary.servers.linodedb.net',
         'PORT': '5432',
 
     }
@@ -241,3 +243,11 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+IMPORT_EXPORT_USE_TRANSACTIONS = False
+IMPORT_EXPORT_SKIP_ADMIN_LOG = True
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 20242880
+DATA_DOWNLOAD_MAX_MEMORY_SIZE = 20242880
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 250000
