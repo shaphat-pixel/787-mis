@@ -87,8 +87,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'linpostgres',
-        'PASSWORD': '^ycZUaSzWOrsK37E',
-        'HOST': 'lin-15054-4726-pgsql-primary.servers.linodedb.net',
+        'PASSWORD': '9KLJ8T4fuJMvTp$1',
+        'HOST': 'lin-15103-4753-pgsql-primary.servers.linodedb.net',
         'PORT': '5432',
 
     }
