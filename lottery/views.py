@@ -79,7 +79,7 @@ def Mobile_Number_Directory_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:aEZG4s43IF70,4s7@lin-15197-4803-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:qsuMdH#kv2wPcYVF@lin-15213-4811-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('files/data.csv')
