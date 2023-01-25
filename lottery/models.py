@@ -57,7 +57,6 @@ class Winning_Tickets(models.Model):
 
 
 class Mobile_Number_Directory(models.Model):
-    id = models.CharField(max_length=100)
     mobile_number = models.CharField(primary_key=True, validators=[MinLengthValidator(12)], max_length=12)
     source = models.CharField(default="", max_length=200, null=True, blank=True)
 
@@ -70,4 +69,4 @@ class Mobile_Number_Directory(models.Model):
 
 
 class File(models.Model):
-    file = models.FileField(upload_to="files/")
+    file = models.FileField(upload_to="files")
