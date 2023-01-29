@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -172,8 +172,8 @@ SITE_ID = 1
 REST_USE_JWT = True
 
 JWT_AUTH_COOKIE = 'cookie'
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SAMESITE = 'LAX'
 SESSION_COOKIE_SAMESITE = 'LAX'
 
