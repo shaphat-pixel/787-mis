@@ -22,7 +22,7 @@ RUN apk add --no-cache --update \
         libjpeg-turbo-dev zlib-dev
 
 
-RUN pip install --upgrade
+RUN pip install --upgrade pip
 
 
 
