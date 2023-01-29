@@ -26,3 +26,24 @@ class FileSerializer(serializers.ModelSerializer):
     class Meta:
         model = File
         fields = '__all__'
+
+class ActivePlayerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Active_Player_File
+        fields = '__all__'
+
+class ActualTicketInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Actual_Ticket_Info_File
+        fields = '__all__'
+
+class SalesTransactionsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sales_Transactions_File
+        fields = '__all__'
+
+
+class WinningTicketsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Winning_Tickets_File
+        fields = '__all__'

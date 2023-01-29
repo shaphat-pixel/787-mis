@@ -13,6 +13,11 @@ class Active_Player_List(models.Model):
     date_created = models.CharField(default="", max_length=100)
 
 
+    class Meta:
+        db_table = 'active_player_list'
+        managed = False
+
+
     def __str__(self):
         return f'{self.player_name}'
     
@@ -27,6 +32,10 @@ class Sales_Transactions(models.Model):
     number_of_tickets = models.PositiveIntegerField()
     amount = models.IntegerField()
 
+    class Meta:
+        db_table = 'sales_transactions'
+        managed = False
+
 
     def __str__(self):
         return f'{self.player_name}'
@@ -37,6 +46,10 @@ class Actual_Ticket_Information(models.Model):
     mobile_number = models.CharField(default="", max_length=100)
     price=models.CharField(max_length=300, default="")
     date_created=models.CharField(max_length=100, default="")
+
+    class Meta:
+        db_table = 'actual_ticket_info'
+        managed = False
     
 
     def __str__(self):
@@ -70,3 +83,19 @@ class Mobile_Number_Directory(models.Model):
 
 class File(models.Model):
     file = models.FileField(upload_to="files")
+
+
+class Active_Player_File(models.Model):
+    file = models.FileField(upload_to="ActivePlayerList")
+
+
+class Actual_Ticket_Info_File(models.Model):
+    file = models.FileField(upload_to="ActualTicketInfo")
+
+class Sales_Transactions_File(models.Model):
+    file = models.FileField(upload_to="SalesTransactions")
+
+
+class Winning_Tickets_File(models.Model):
+    file = models.FileField(upload_to="WinningTickets")
+
