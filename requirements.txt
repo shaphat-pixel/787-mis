@@ -35,7 +35,7 @@ oauthlib==3.2.1
 odfpy==1.4.1
 openpyxl==3.0.10
 packaging==21.3
-psycopg2==2.9.5
+
 psycopg2-binary==2.9.5
 prompt-toolkit==3.0.33
 pycparser==2.21
