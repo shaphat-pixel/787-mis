@@ -13,12 +13,27 @@ WORKDIR /app/mis
 #copying requirements.txt file to the working directory
 COPY requirements.txt /app/mis/
 
+RUN apk add --no-cache --update \
+        python3 python3-dev gcc \
+        gfortran musl-dev g++ \
+        libffi-dev openssl-dev \
+        libxml2 libxml2-dev \
+        libxslt libxslt-dev \
+        libjpeg-turbo-dev zlib-dev
+
+
+RUN pip install --upgrade
+
+
+
 # Build psycopg2-binary from source -- add required dependencies
+
+
 RUN apk add --virtual .build-deps --no-cache postgresql-dev gcc python3-dev musl-dev && \
         pip install --no-cache-dir -r requirements.txt && \
         apk --purge del .build-deps
 
-CMD apk add --no-cache --virtual .build-deps gcc
+
 #copying the content of the backend application into our Docker container.
 COPY . /app/mis/
 
