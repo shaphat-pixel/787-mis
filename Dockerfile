@@ -17,6 +17,8 @@ COPY requirements.txt /app/mis/
 RUN apk add --virtual .build-deps --no-cache postgresql-dev gcc python3-dev musl-dev && \
         pip install --no-cache-dir -r requirements.txt && \
         apk --purge del .build-deps
+RUN apk pip install pandas
+RUN apk pip install numpy
 
 #copying the content of the backend application into our Docker container.
 COPY . /app/mis/
