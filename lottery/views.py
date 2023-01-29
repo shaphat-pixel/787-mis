@@ -12,7 +12,7 @@ from sqlalchemy import create_engine
 import psycopg2 
 import io
 import pandas as pd
-from pangres import upsert
+
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import viewsets, permissions
 import shutil
