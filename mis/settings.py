@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     'import_export',
     'pandas',
-    'pangres',
+    
 
     'users',
     'lottery',
