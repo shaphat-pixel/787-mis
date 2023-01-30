@@ -23,4 +23,10 @@ class WinningTicketsFilter(django_filters.FilterSet):
         model = Winning_Tickets
         fields = ['player_name', 'mobile_number', 'draw_id', 'ticket_number', 'price_amount', 'price_category']
 
+
+class MobileNumberDirectoryFilter(django_filters.FilterSet):
+    class Meta:
+        model = Mobile_Number_Directory
+        fields = ['mobile_number', 'source']
+
     

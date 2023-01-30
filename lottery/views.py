@@ -300,6 +300,16 @@ def DeleteWinningTicketsFile(request):
 
 
 @api_view(['GET'])
+def Mobile_Number_DirectoryList(request):
+    queryset = Mobile_Number_Directory.objects.all()
+    filterset = MobileNumberDirectoryFilter(request.GET, queryset=queryset)
+    if filterset.is_valid():
+         queryset = filterset.qs
+    serializer = Mobile_Number_DirectorySerializer(queryset, many=True)
+    
+    return Response(serializer.data)
+
+@api_view(['GET'])
 def Mobile_Number_Directory_Import(request):
 
 
