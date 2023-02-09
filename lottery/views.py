@@ -317,7 +317,7 @@ def Mobile_Number_Directory_Import(request):
      'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
-     df = pd.read_csv('./files/*.csv')
+     df = pd.read_csv('/files/*.csv')
      # Drop old table and create new empty table
      df.head(0).to_sql('mobile_number_directory', engine, if_exists='append',index=False)
 
