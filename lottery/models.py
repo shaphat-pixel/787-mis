@@ -29,8 +29,8 @@ class Sales_Transactions(models.Model):
     mobile_number =  models.CharField(default="", max_length=100)
     player_name = models.CharField(default="", max_length=100)
     network = models.CharField(default="", max_length=100)
-    number_of_tickets = models.PositiveIntegerField()
-    amount = models.IntegerField()
+    number_of_tickets = models.CharField(default="", max_length=100)
+    amount = models.CharField(default="", max_length=100)
 
     class Meta:
         db_table = 'sales_transactions'
@@ -57,8 +57,8 @@ class Actual_Ticket_Information(models.Model):
     
 
 class Winning_Tickets(models.Model):
-    draw_id = models.IntegerField()
-    draw_name = models.IntegerField()
+    draw_id = models.CharField(default="", max_length=100)
+    draw_name = models.CharField(default="", max_length=100)
     player_name = models.CharField(default="", max_length=100)
     mobile_number = models.CharField(default="", max_length=100)
     ticket_number = models.CharField(default="", max_length=100)
@@ -70,7 +70,7 @@ class Winning_Tickets(models.Model):
 
 
 class Mobile_Number_Directory(models.Model):
-    mobile_number = models.CharField(primary_key=True, validators=[MinLengthValidator(12)], max_length=12)
+    mobile_number = models.CharField(default="", max_length=12)
     source = models.CharField(default="", max_length=200, null=True, blank=True)
 
     class Meta:

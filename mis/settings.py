@@ -64,7 +64,9 @@ ROOT_URLCONF = 'mis.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'lottery-mis-frontend/build/static')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,8 +89,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'linpostgres',
-        'PASSWORD': 'qsuMdH#kv2wPcYVF',
-        'HOST': 'lin-15213-4811-pgsql-primary.servers.linodedb.net',
+        'PASSWORD': 'ySDTo2EbCoRw+3XG',
+        'HOST': 'lin-16005-5195-pgsql-primary.servers.linodedb.net',
         'PORT': '5432',
 
     }
@@ -218,7 +220,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+            os.path.join(BASE_DIR, 'lottery-mis-frontend/build')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type

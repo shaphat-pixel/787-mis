@@ -41,7 +41,7 @@ def Active_Player_List_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:qsuMdH#kv2wPcYVF@lin-15213-4811-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('ActivePlayerList/*.csv')
@@ -110,7 +110,7 @@ def Sales_Transactions_List_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:qsuMdH#kv2wPcYVF@lin-15213-4811-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('SalesTransactions/*.csv')
@@ -178,7 +178,7 @@ def Actual_Ticket_Information_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:qsuMdH#kv2wPcYVF@lin-15213-4811-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('ActualTicketInfo/*.csv')
@@ -248,7 +248,7 @@ def Winning_Tickets_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:qsuMdH#kv2wPcYVF@lin-15213-4811-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('WinningTickets/*.csv')
@@ -314,7 +314,7 @@ def Mobile_Number_Directory_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:qsuMdH#kv2wPcYVF@lin-15213-4811-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('files/*.csv')

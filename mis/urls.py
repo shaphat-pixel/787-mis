@@ -4,6 +4,7 @@ from django.urls import path, include
 
 from lottery import views
 from rest_framework import routers
+from django.views.generic import TemplateView
 
 
 file_router = routers.DefaultRouter()
@@ -24,6 +25,7 @@ winning_tickets_router.register('WinningTickets', views.WinningTicketsFileViewSe
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name='index.html')),
 
     path(('users/'), include('users.urls')),
 
