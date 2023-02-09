@@ -12,7 +12,7 @@ from sqlalchemy import create_engine
 import psycopg2 
 import io
 import pandas as pd
-
+from glob import glob
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import viewsets, permissions
 import shutil
@@ -41,7 +41,7 @@ def Active_Player_List_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('ActivePlayerList/*.csv')
@@ -110,7 +110,7 @@ def Sales_Transactions_List_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('SalesTransactions/*.csv')
@@ -178,7 +178,7 @@ def Actual_Ticket_Information_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('ActualTicketInfo/*.csv')
@@ -248,7 +248,7 @@ def Winning_Tickets_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
      df = pd.read_csv('WinningTickets/*.csv')
@@ -314,10 +314,10 @@ def Mobile_Number_Directory_Import(request):
 
 
      engine = create_engine(
-     'postgresql+psycopg2://linpostgres:ySDTo2EbCoRw+3XG@lin-16005-5195-pgsql-primary.servers.linodedb.net:5432/postgres')
+     'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
-     df = pd.read_csv('/files/*.csv')
+     df = pd.read_csv(glob('files/*.csv')[0])
      # Drop old table and create new empty table
      df.head(0).to_sql('mobile_number_directory', engine, if_exists='append',index=False)
 

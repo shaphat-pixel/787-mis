@@ -70,7 +70,7 @@ class Winning_Tickets(models.Model):
 
 
 class Mobile_Number_Directory(models.Model):
-    mobile_number = models.CharField(default="", max_length=12)
+    mobile_number = models.CharField(max_length=100, primary_key=True)
     source = models.CharField(default="", max_length=200, null=True, blank=True)
 
     class Meta:

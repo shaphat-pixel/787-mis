@@ -65,7 +65,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'lottery-mis-frontend/build/static')
+            
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -89,8 +89,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'linpostgres',
-        'PASSWORD': 'ySDTo2EbCoRw+3XG',
-        'HOST': 'lin-16005-5195-pgsql-primary.servers.linodedb.net',
+        'PASSWORD': 'Z4YPDk2&MdG4Kofo',
+        'HOST': 'lin-16060-5220-pgsql-primary.servers.linodedb.net',
         'PORT': '5432',
 
     }
