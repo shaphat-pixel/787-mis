@@ -44,7 +44,7 @@ def Active_Player_List_Import(request):
      'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
-     df = pd.read_csv('ActivePlayerList/*.csv')
+     df = pd.read_csv(glob('ActivePlayerList/*.csv')[0])
      # Drop old table and create new empty table
      df.head(0).to_sql('active_player_list', engine, if_exists='append',index=False)
 
@@ -61,19 +61,19 @@ def Active_Player_List_Import(request):
      
      return Response("Active Players listed successfully") 
 
-"""
+
 @api_view(['GET'])
 def Active_Player_List_Clean(request):
      lastSeenId = float('-Inf')
-     rows = Mobile_Number_Directory.objects.all().order_by('mobile_number')
+     rows = Active_Player_List.objects.all().order_by('player_id')
 
      for row in rows:
-          if row.mobile_number == lastSeenId:
+          if row.player_id == lastSeenId:
                row.delete() # We've seen this id in a previous row
           else: # New id found, save it and check future rows for duplicates.
-               lastSeenId = row.mobile_number
+               lastSeenId = row.player_id
      return Response("Duplicates eliminated successfully")
-"""
+
 
 class ActivePlayerFileViewSet(viewsets.ModelViewSet):
      queryset = Active_Player_File.objects.all()
@@ -113,7 +113,7 @@ def Sales_Transactions_List_Import(request):
      'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
-     df = pd.read_csv('SalesTransactions/*.csv')
+     df = pd.read_csv(glob('SalesTransactions/*.csv')[0])
      # Drop old table and create new empty table
      df.head(0).to_sql('sales_transactions', engine, if_exists='append',index=False)
 
@@ -130,19 +130,19 @@ def Sales_Transactions_List_Import(request):
      
      return Response("Sales Transactions listed successfully") 
 
-"""
+
 @api_view(['GET'])
-def Active_Player_List_Clean(request):
+def Sales_Transactions_Clean(request):
      lastSeenId = float('-Inf')
-     rows = Mobile_Number_Directory.objects.all().order_by('mobile_number')
+     rows = Sales_Transactions.objects.all().order_by('transaction_id')
 
      for row in rows:
-          if row.mobile_number == lastSeenId:
+          if row.transaction_id == lastSeenId:
                row.delete() # We've seen this id in a previous row
           else: # New id found, save it and check future rows for duplicates.
-               lastSeenId = row.mobile_number
+               lastSeenId = row.transaction_id
      return Response("Duplicates eliminated successfully")
-"""
+
 
 class SalesTransactionsFileViewSet(viewsets.ModelViewSet):
      queryset = Sales_Transactions_File.objects.all()
@@ -181,7 +181,7 @@ def Actual_Ticket_Information_Import(request):
      'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
-     df = pd.read_csv('ActualTicketInfo/*.csv')
+     df = pd.read_csv(glob('ActualTicketInfo/*.csv')[0])
      # Drop old table and create new empty table
      df.head(0).to_sql('actual_ticket_info', engine, if_exists='append',index=False)
 
@@ -198,19 +198,19 @@ def Actual_Ticket_Information_Import(request):
      
      return Response("Actual Ticket Info Listed ") 
 
-"""
+
 @api_view(['GET'])
-def Active_Player_List_Clean(request):
+def Actual_Ticket_Info_Clean(request):
      lastSeenId = float('-Inf')
-     rows = Mobile_Number_Directory.objects.all().order_by('mobile_number')
+     rows = Actual_Ticket_Information.objects.all().order_by('date_created')
 
      for row in rows:
-          if row.mobile_number == lastSeenId:
+          if row.date_created == lastSeenId:
                row.delete() # We've seen this id in a previous row
           else: # New id found, save it and check future rows for duplicates.
-               lastSeenId = row.mobile_number
+               lastSeenId = row.date_created
      return Response("Duplicates eliminated successfully")
-"""
+
 
 class ActualTicketInfoFileViewSet(viewsets.ModelViewSet):
      queryset = Actual_Ticket_Info_File.objects.all()
@@ -251,7 +251,7 @@ def Winning_Tickets_Import(request):
      'postgresql+psycopg2://linpostgres:Z4YPDk2&MdG4Kofo@lin-16060-5220-pgsql-primary.servers.linodedb.net:5432/postgres')
 
 
-     df = pd.read_csv('WinningTickets/*.csv')
+     df = pd.read_csv(glob('WinningTickets/*.csv')[0])
      # Drop old table and create new empty table
      df.head(0).to_sql('winning_tickets', engine, if_exists='append',index=False)
 
@@ -268,19 +268,19 @@ def Winning_Tickets_Import(request):
      
      return Response("Winning Tickets Listed successfully ") 
 
-"""
+
 @api_view(['GET'])
-def Active_Player_List_Clean(request):
+def Winning_Tickets_Clean(request):
      lastSeenId = float('-Inf')
-     rows = Mobile_Number_Directory.objects.all().order_by('mobile_number')
+     rows = Winning_Tickets.objects.all().order_by('draw_id')
 
      for row in rows:
-          if row.mobile_number == lastSeenId:
+          if row.draw_id == lastSeenId:
                row.delete() # We've seen this id in a previous row
           else: # New id found, save it and check future rows for duplicates.
-               lastSeenId = row.mobile_number
+               lastSeenId = row.draw_id
      return Response("Duplicates eliminated successfully")
-"""
+
 
 class WinningTicketsFileViewSet(viewsets.ModelViewSet):
      queryset = Winning_Tickets_File.objects.all()
@@ -363,3 +363,4 @@ def DeleteFile(request):
      return Response("file deleted successfully!")
             
                  
+     

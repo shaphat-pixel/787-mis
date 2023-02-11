@@ -5,7 +5,7 @@ from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 
 class Active_Player_List(models.Model):
-    player_id = models.CharField(default="", max_length=100)
+    player_id = models.CharField(default="", max_length=100, primary_key=True)
     last_name = models.CharField(default="", max_length=100)
     other_name = models.CharField(default="", max_length=100)
     mobile_number = models.CharField(default="", max_length=100)
@@ -25,7 +25,7 @@ class Active_Player_List(models.Model):
 
 class Sales_Transactions(models.Model):
     transaction_date = models.CharField(default="", max_length=100)
-    transaction_id = models.CharField(default="", max_length=100)
+    transaction_id = models.CharField(default="", max_length=100, primary_key=True)
     mobile_number =  models.CharField(default="", max_length=100)
     player_name = models.CharField(default="", max_length=100)
     network = models.CharField(default="", max_length=100)
@@ -45,7 +45,7 @@ class Actual_Ticket_Information(models.Model):
     player_name = models.CharField(default="", max_length=100)
     mobile_number = models.CharField(default="", max_length=100)
     price=models.CharField(max_length=300, default="")
-    date_created=models.CharField(max_length=100, default="")
+    date_created=models.CharField(max_length=100, default="", primary_key=True)
 
     class Meta:
         db_table = 'actual_ticket_info'
@@ -57,13 +57,18 @@ class Actual_Ticket_Information(models.Model):
     
 
 class Winning_Tickets(models.Model):
-    draw_id = models.CharField(default="", max_length=100)
+    draw_id = models.CharField(default="", max_length=100, primary_key=True)
     draw_name = models.CharField(default="", max_length=100)
     player_name = models.CharField(default="", max_length=100)
     mobile_number = models.CharField(default="", max_length=100)
     ticket_number = models.CharField(default="", max_length=100)
     price_amount=models.CharField(max_length=100, default="")
     price_category=models.CharField(max_length=100, default="")
+
+
+    class Meta:
+        db_table = 'winning_tickets'
+        managed = False
 
     def __str__(self):
         return f'{self.player_name}'

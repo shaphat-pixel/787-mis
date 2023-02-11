@@ -65,7 +65,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            
+            os.path.join(BASE_DIR, 'react-dashboard-main/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -220,7 +220,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-            os.path.join(BASE_DIR, 'lottery-mis-frontend/build')
+            os.path.join(BASE_DIR, 'react-dashboard-main/build/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type

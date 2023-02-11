@@ -44,31 +44,24 @@ urlpatterns = [
 
 
     path('active-player-import/', views.Active_Player_List_Import, name="active-player-list-import"),
-    #path('mobile-number-clean/', views.Mobile_Number_Directory_Clean, name="mobile-number-clean"),
+    path('active-player-list-clean/', views.Active_Player_List_Clean, name="active-player-list-clean"),
     path('active-player-file-upload/', include(active_player_file_router.urls)),
     path('active-player-file-delete/', views.DeleteActivePlayerFile, name="delete-activer-player-file"),
 
 
     path('actual-ticket-info-import/', views.Actual_Ticket_Information_Import, name="actual-ticket-info-import"),
-    #path('mobile-number-clean/', views.Mobile_Number_Directory_Clean, name="mobile-number-clean"),
+    path('actual-ticket-info-clean/', views.Actual_Ticket_Info_Clean, name="actual-ticket-info-clean"),
     path('actual-ticket-info-file-upload/', include(actual_ticket_info_router.urls)),
     path('actual-ticket-info-file-delete/', views.DeleteActualTicketInfoFile, name="delete-actual-player-info-file"),
 
 
     path('sales-transactions-import/', views.Sales_Transactions_List_Import, name="sales-transactions-import"),
-    #path('mobile-number-clean/', views.Mobile_Number_Directory_Clean, name="mobile-number-clean"),
+    path('sales-transactions-clean/', views.Sales_Transactions_Clean, name="sales-transactions-clean"),
     path('sales-transactions-file-upload/', include(sales_transactions_router.urls)),
     path('sales-transactions-file-delete/', views.DeleteSalesTransactionsFile, name="delete-sales-transactions-file"),
-
-
-    path('sales-transactions-import/', views.Sales_Transactions_List_Import, name="sales-transactions-import"),
-    #path('mobile-number-clean/', views.Mobile_Number_Directory_Clean, name="mobile-number-clean"),
-    path('sales-transactions-file-upload/', include(sales_transactions_router.urls)),
-    path('sales-transactions-file-delete/', views.DeleteSalesTransactionsFile, name="delete-sales-transactions-file"),
-
 
     path('winning-tickets-import/', views.Winning_Tickets_Import, name="winning-tickets-import"),
-    #path('mobile-number-clean/', views.Mobile_Number_Directory_Clean, name="mobile-number-clean"),
+    path('winning-tickets-clean/', views.Winning_Tickets_Clean, name="winning-tickets-clean"),
     path('winning-tickets-file-upload/', include(winning_tickets_router.urls)),
     path('winning-tickets-file-delete/', views.DeleteWinningTicketsFile, name="delete-winning-rickets-file"),
 
